@@ -8,7 +8,7 @@ package Java_GB.Java_GB.HW;
 
 public class HW03 {
     public static void main(String[] args) {
-        System.out.println(calculate('*', 3, 5));
+        System.out.println(calculate('-', 3, 5));
     }
 
     private static int calculate(char op, int a, int b) {
