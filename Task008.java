@@ -5,10 +5,10 @@ package Java_GB;
 
 public class Task008 {
     public static void main(String[] args) {
-        System.out.println(characterAlternation(7, 'a', 's'));
+        System.out.println(charRepeat(8, 'a', 's'));
     }
 
-    private static String characterAlternation(int N, char c1, char c2) {
+    private static String charRepeat(int N, char c1, char c2) {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < N; i++) {
             if (i % 2 == 0){
