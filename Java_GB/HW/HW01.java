@@ -6,7 +6,7 @@ package Java_GB.Java_GB.HW;
 
 public class HW01 {
     public static void main(String[] args) {
-        System.out.println(countNTriangle(5));
+        System.out.println(countNTriangle(4));
     }
 
     private static int countNTriangle(int n){
