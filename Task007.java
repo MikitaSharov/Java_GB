@@ -7,7 +7,7 @@ package Java_GB;
 
 public class Task007 {
     public static void main(String[] args) {
-        System.out.println(exponent(2, -2));
+        System.out.println(exponent(2, -3));
     }
 
     public static double exponent(double a, int b) {
