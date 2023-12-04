@@ -40,22 +40,58 @@ public class HWlast {
 
 
         System.out.println(laptops);
+        createFilter(laptops);
     }
 
-    static void createFilter(Set laptops){
+    private static void createFilter(Set<Laptops> laptops){
         Map<String, Object> reference = new HashMap<>();
         Scanner scanner = new Scanner(System.in);
-        int choice = scanner.nextInt();
         boolean search = true;
 
         while (search) {
             System.out.println("Введите цифру, соответствующую необходимому критерию: ");
             System.out.println("1 - ОЗУ\n2 - Объем ЖД\n3 - Операционная система\n4 - Цвет\n5 - Поиск");
+            int choice = scanner.nextInt();
 
             switch (choice){
                 case 1:
+                    System.out.println("Введите объём RAM: ");
+                    int ramFilter = scanner.nextInt();
+                    reference.put("ram", ramFilter);
+                    break;
+                case 2:
+                    System.out.println("Введите объём SSD: ");
+                    int ssdFilter = scanner.nextInt();
+                    reference.put("ssd", ssdFilter);
+                    break;
+                case 3:
+                    System.out.println("Введите ОС: ");
+                    String osFilter = scanner.next();
+                    reference.put("os", osFilter);
+                    break;
+                case 4:
+                    System.out.println("Введите цвет: ");
+                    String colorFilter = scanner.next();
+                    reference.put("color", colorFilter);
+                    break;
+                case 5:
+                    printFiltered(laptops, reference);
+                    search = false;
+                    break;
+
+                default:
+                    System.out.println("Что-то не то ввели!");
+                    return;
             }
 
+        }
+    }
+
+    static void printFiltered(Set<Laptops> laptops, Map<String, Object> reference){
+        for (Laptops laptop: laptops) {
+            boolean matchesFilter = laptop.contains(reference);
+
+            if (matchesFilter) System.out.println(laptop);
         }
     }
 
