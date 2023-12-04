@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class Task009 {
     public static void main(String[] args) {
-        String string = "aaaabbbcdd";
+        String string = "aaaabbbcdda";
         System.out.println(zipString(string));
     }
 
