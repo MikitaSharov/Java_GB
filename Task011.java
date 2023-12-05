@@ -5,27 +5,39 @@ package Java_GB;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.util.Scanner;
 
 public class Task011 {
     public static void main(String[] args) {
-        repeatWord("TEST", 10);
+        String path = "src/Java_GB/test.txt";
+        repeatWord("TEST", 10, path);
+        readFile(path);
     }
 
-    private static void repeatWord(String word, int count){
+    private static void repeatWord(String word, int count, String path){
         StringBuilder repeated = new StringBuilder();
         for (int i = 0; i < count; i++) {
             repeated.append(word);
         }
-        writeToFile(repeated);
+        writeToFile(repeated, path);
     }
 
-    private static void writeToFile(StringBuilder repeated){
-        File file = new File("src/Java_GB/test.txt");
-        try (FileWriter writer = new FileWriter(file)){
+    private static void writeToFile(StringBuilder repeated, String path){
+        try (FileWriter writer = new FileWriter(path)){
             writer.write(repeated.toString());
         } catch (Exception e) {
-            e.fillInStackTrace();
+            e.printStackTrace();
         }
+    }
 
+    private static void readFile(String path) {
+        File file = new File(path);
+        StringBuilder readed = new StringBuilder();
+        try (Scanner scanner = new Scanner(file)){
+            readed.append(scanner.nextLine());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(readed.toString());
     }
 }
