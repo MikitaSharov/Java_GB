@@ -2,9 +2,7 @@ package Java_GB;
 
 //Заполнить список десятью случайными числами. Отсортировать список методом sort() и вывести его на экран.
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Task013 {
@@ -16,6 +14,8 @@ public class Task013 {
         for (int i = 0; i < 10 ; i++) {
             list.add(ThreadLocalRandom.current().nextInt(3, 6));
         }
+        list.sort(null);
+        list.sort(Collections.reverseOrder());
         System.out.println(list.toString());
     }
 }
