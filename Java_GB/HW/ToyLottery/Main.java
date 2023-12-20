@@ -13,11 +13,11 @@ public class Main {
         Toy toy3 = new Toy();
         toy3.put("3 60 кукла");
 
-        PriorityQueue<int[]> priorityQueue = new PriorityQueue<>((a1, a2) -> Integer.compare(a2[1], a1[1]));
+        PriorityQueue<Toy> priorityQueue = new PriorityQueue<>((a1, a2) -> Integer.compare(a2.getChance(), a1.getChance()));
 
-        priorityQueue.add(toy1.toArray());
-        priorityQueue.add(toy2.toArray());
-        priorityQueue.add(toy3.toArray());
+        priorityQueue.add(toy1);
+        priorityQueue.add(toy2);
+        priorityQueue.add(toy3);
 
 
         int qtyDraws = 10;
@@ -25,8 +25,5 @@ public class Main {
         for (int i = 0; i < qtyDraws; i++) {
             new Get(priorityQueue);
         }
-
-
-
     }
 }

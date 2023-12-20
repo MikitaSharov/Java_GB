@@ -1,7 +1,5 @@
 package Java_GB.Java_GB.HW.ToyLottery;
 
-import java.util.PriorityQueue;
-
 public class Toy {
     int id;
     int chance;
@@ -18,12 +16,12 @@ public class Toy {
         else System.out.println("вводить надо через пробел например: 1 20 кукла");
     }
 
-    public int[] toArray() {
-        return new int[] {id, chance};
+    public int getId() {
+        return id;
     }
 
-    @Override
-    public String toString() {
-        return id + " " + name + " " + chance;
+    public int getChance() {
+        return chance;
     }
+
 }
