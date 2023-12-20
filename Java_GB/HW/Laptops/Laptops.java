@@ -1,4 +1,4 @@
-package Java_GB.Java_GB.HW;
+package Java_GB.Java_GB.HW.Laptops;
 
 import java.util.Map;
 
